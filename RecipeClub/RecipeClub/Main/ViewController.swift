@@ -23,6 +23,7 @@ class ViewController: UIViewController {
     
     private func setupCollectionView() {
         collectionView.register(MainCollectionViewCell.self, forCellWithReuseIdentifier: MainCollectionViewCell.identifier)
+        collectionView.register(HeaderCell.self, forCellWithReuseIdentifier: HeaderCell.identifier)
         collectionView.register(MainHeaderCollectionReusableView.self,
                                 forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
                                 withReuseIdentifier: MainHeaderCollectionReusableView.identifier)
@@ -33,7 +34,8 @@ extension ViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         referenceSizeForHeaderInSection section: Int) -> CGSize {
-        return CGSize(width: view.width, height: view.width)
+        if section == 0 { return CGSize(width: view.width, height: view.width) }
+        return .zero
     }
     
     func collectionView(_ collectionView: UICollectionView,
@@ -47,11 +49,18 @@ extension ViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.width, height: CellSize.mainCollectionViewCell + (Constant.padding * 2))
+        if indexPath.section == 0 {
+            return CGSize(width: view.width, height: 70)
+        }
+        return CGSize(width: view.width, height: (CellSize.mainCollectionViewCell + (Constant.padding * 2)) * 2)
     }
 }
 
 extension ViewController: UICollectionViewDataSource {
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        2
+    }
     
     func collectionView(_ collectionView: UICollectionView,
                         numberOfItemsInSection section: Int) -> Int {
@@ -60,7 +69,13 @@ extension ViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MainCollectionViewCell.identifier, for: indexPath)
-        return cell
+        switch indexPath.section {
+        case 0:
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HeaderCell.identifier, for: indexPath)
+            return cell
+        default:
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MainCollectionViewCell.identifier, for: indexPath)
+            return cell
+        }
     }
 }

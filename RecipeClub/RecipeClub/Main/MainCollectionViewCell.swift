@@ -40,7 +40,6 @@ class MainCollectionViewCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        collectionView.backgroundColor = .purple
         collectionView.dataSource = self
         contentView.addSubview(collectionView)
     }
@@ -70,28 +69,5 @@ extension MainCollectionViewCell: UICollectionViewDataSource {
         }
         cell.setup(images[indexPath.item])
         return cell
-    }
-}
-
-class ImageCell: UICollectionViewCell {
-    private let imageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.clipsToBounds = true
-        imageView.contentMode = .scaleAspectFill
-        return imageView
-    }()
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        imageView.frame = bounds
-        addSubview(imageView)
-    }
-    
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
-    }
-    
-    func setup(_ image: String) {
-        imageView.image = UIImage(named: image)
     }
 }
