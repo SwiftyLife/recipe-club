@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		156BA23126A3E79300D86682 /* MyPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 156BA23026A3E79300D86682 /* MyPage.storyboard */; };
+		156BA23326A3F04C00D86682 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156BA23226A3F04C00D86682 /* MyPageViewController.swift */; };
 		D07574C8269C24340083980B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07574C7269C24340083980B /* AppDelegate.swift */; };
 		D07574CA269C24340083980B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07574C9269C24340083980B /* SceneDelegate.swift */; };
 		D07574CC269C24340083980B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07574CB269C24340083980B /* ViewController.swift */; };
@@ -25,6 +27,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		156BA23026A3E79300D86682 /* MyPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyPage.storyboard; sourceTree = "<group>"; };
+		156BA23226A3F04C00D86682 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
 		D07574C4269C24340083980B /* RecipeClub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecipeClub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D07574C7269C24340083980B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D07574C9269C24340083980B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -55,6 +59,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		156BA22F26A3E78300D86682 /* MyPage */ = {
+			isa = PBXGroup;
+			children = (
+				156BA23026A3E79300D86682 /* MyPage.storyboard */,
+				156BA23226A3F04C00D86682 /* MyPageViewController.swift */,
+			);
+			path = MyPage;
+			sourceTree = "<group>";
+		};
 		D07574BB269C24340083980B = {
 			isa = PBXGroup;
 			children = (
@@ -74,6 +87,7 @@
 		D07574C6269C24340083980B /* RecipeClub */ = {
 			isa = PBXGroup;
 			children = (
+				156BA22F26A3E78300D86682 /* MyPage */,
 				D07574C7269C24340083980B /* AppDelegate.swift */,
 				D07574C9269C24340083980B /* SceneDelegate.swift */,
 				D0EC355126A1513400529357 /* UIView+Extension.swift */,
@@ -160,6 +174,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D07574D7269C24370083980B /* LaunchScreen.storyboard in Resources */,
+				156BA23126A3E79300D86682 /* MyPage.storyboard in Resources */,
 				D07574D4269C24370083980B /* Assets.xcassets in Resources */,
 				D07574CF269C24340083980B /* Main.storyboard in Resources */,
 				D075753A26A008600083980B /* MainMenuBar.xib in Resources */,
@@ -180,6 +195,7 @@
 				D0EC355026A1510600529357 /* MainCollectionViewCell.swift in Sources */,
 				D07574CA269C24340083980B /* SceneDelegate.swift in Sources */,
 				D0EC354926A1392B00529357 /* MainHeaderCollectionReusableView.swift in Sources */,
+				156BA23326A3F04C00D86682 /* MyPageViewController.swift in Sources */,
 				D075753C26A008660083980B /* MainMenuBar.swift in Sources */,
 				D0EC354726A1360600529357 /* MainCollectionViewLayout.swift in Sources */,
 				D0EC355626A15C8400529357 /* HeaderCell.swift in Sources */,
