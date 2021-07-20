@@ -24,3 +24,22 @@ extension UIView {
         return view
     }
 }
+
+//MARK: - Doyeona
+extension UIView {
+    
+    func makeSpecificCornerRounded(cornerRadius: CGFloat, maskedCorners: CACornerMask) {
+        clipsToBounds = true
+        layer.cornerRadius = cornerRadius
+        layer.maskedCorners = CACornerMask(arrayLiteral: maskedCorners)
+    }
+    
+    func setCornerRadius(radius: CGFloat) {
+         self.layer.cornerRadius = radius
+     }
+    
+    func makeCircular() {
+        self.layer.cornerRadius =  self.frame.size.width / 2.5
+          self.clipsToBounds = true
+      }
+}
